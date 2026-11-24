@@ -1,0 +1,46 @@
+<!-- Create an HTML page containing a text input, an Add Student button,
+and an empty list. When the user enters a student name and clicks the 
+button, display that name dynamically in a list using JavaScript's 
+querySelectorAll() and createElement() methods. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Student Management list</h2>
+    <input type="text" id="studentname" placeholder="Enter Student name">
+
+    <button id="addbtn">Add Student</button>
+
+    <h3>Student List</h3>
+
+    <ul id="studentlist"></ul>
+
+    <script>
+        var input = document.querySelectorAll("studentname")[0];
+        var button = document.querySelectorAll("addbtn")[0];
+        var list = document.querySelectorAll("studentlist")[0];
+
+        button.addEventListener("click", function(){
+            var name  = input.value.trim();
+            
+            if (name !== "") {
+
+                var li = document.createElement("li");
+
+                li.textContent = name;
+
+                list.appendChild(li);
+
+                input.value = "";
+
+            
+            }
+        })
+    </script>
+</body>
+</html>

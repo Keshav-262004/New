@@ -1,0 +1,7 @@
+dt {
+    font-weight: bold;
+}
+dl {
+    display: grid;
+    grid-template-columns: 3fr 9fr;
+}
